@@ -19,7 +19,7 @@ module.exports = {
     new UglifyJsPlugin({ sourceMap: true }),
     new CleanWebpackPlugin(['dist']),
     new HtmlWebpackPlugin({
-      title: 'Ping Pong',
+      title: 'Simon',
       template: './src/index.html',
       inject: 'body'
     })
@@ -37,7 +37,11 @@ module.exports = {
         test: /\.js$/,
         exclude: /node_modules/,
         loader: "eslint-loader"
+      },
+      {
+        test: /\.png$/, loader: "file-loader?mimetype=image/png"
       }
+
     ]
   }
 };
